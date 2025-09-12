@@ -9,7 +9,7 @@ public class CrusherBlock2D : MonoBehaviour
 
     [Header("Movement Settings")]
     public float moveSpeed = 2f;
-    public float pushForce = 5000f; // Force to shove player
+    public float pushForce = 5000f;
 
     private Vector2 targetPos;
     private bool movingToB = true;
@@ -22,13 +22,8 @@ public class CrusherBlock2D : MonoBehaviour
 
     void FixedUpdate()
     {
-        // Calculate movement direction
         moveDir = ((Vector2)targetPos - (Vector2)transform.position).normalized;
-
-        // Move block steadily
         transform.position = Vector2.MoveTowards(transform.position, targetPos, moveSpeed * Time.fixedDeltaTime);
-
-        // Switch target when reached
         if (Vector2.Distance(transform.position, targetPos) < 0.05f)
         {
             movingToB = !movingToB;
@@ -43,7 +38,6 @@ public class CrusherBlock2D : MonoBehaviour
             Rigidbody2D playerRb = collision.rigidbody;
             if (playerRb != null)
             {
-                // Instead of popping up, force player in block's move direction
                 playerRb.linearVelocity = moveDir * moveSpeed;
                 playerRb.AddForce(moveDir * pushForce * Time.fixedDeltaTime, ForceMode2D.Force);
             }
