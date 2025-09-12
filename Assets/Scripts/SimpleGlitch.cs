@@ -23,20 +23,20 @@ public class SimpleGlitch : MonoBehaviour
     {
         if (startGlitch & Random.value < glitchChance)
             StartCoroutine(DoGlitch());
-        else if (!startGlitch)
-            GetComponent<Collider2D>().enabled = true;
+        //else if (!startGlitch)
+            //GetComponent<Collider2D>().enabled = true;
     }
 
     System.Collections.IEnumerator DoGlitch()
     {
-        GetComponent<Collider2D>().enabled = false;
+        //GetComponent<Collider2D>().enabled = false;
         transform.localPosition = originalPos + new Vector3(Random.Range(-glitchOffset, glitchOffset), 0, 0);
 
-        sr.color = new Color(Random.value, Random.value, Random.value);
+        sr.color = new Color(Random.value, Random.value, Random.value, sr.color.a);
 
         yield return new WaitForSeconds(glitchTime);
 
         transform.localPosition = originalPos;
-        sr.color = originalColor;
+        sr.color = new Color(originalColor.r, originalColor.g,originalColor.b, sr.color.a);
     }
 }
