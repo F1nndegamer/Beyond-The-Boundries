@@ -16,10 +16,12 @@ public class PlayerMovement : MonoBehaviour
 
     private Rigidbody2D rb;
     private bool isGrounded;
+    public bool isJumping { get; private set; }
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        isJumping = false;
     }
 
     void Update()
@@ -35,6 +37,11 @@ public class PlayerMovement : MonoBehaviour
         if (isGrounded && Input.GetKeyDown(KeyCode.Space))
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
+            isJumping = true;
+        }
+        else if (isGrounded)
+        {
+            isJumping = false;
         }
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
     }
