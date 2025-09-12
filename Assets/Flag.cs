@@ -1,38 +1,62 @@
 using UnityEngine;
+using System.Collections;
 
 public class Flag : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
+    private Rigidbody2D flagrb;
+    bool isfalling;
+    public float falltime;
 
+    void Awake()
+    {
+        flagrb = GetComponent<Rigidbody2D>();
+        Reset(); // Start frozen
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
     public void Fall()
     {
+        isfalling = true;
         Debug.Log("Flag falling");
-        Rigidbody2D flagrb = GetComponent<Rigidbody2D>();
         flagrb.bodyType = RigidbodyType2D.Dynamic;
         flagrb.gravityScale = 1;
-            flagrb.constraints = RigidbodyConstraints2D.None;
+        flagrb.constraints = RigidbodyConstraints2D.None;
+    }
+    void Update()
+    {
+        if (isfalling)
+        {
+            falltime += Time.deltaTime;
         }
+    }
     public void Reset()
     {
-        Rigidbody2D flagrb = GetComponent<Rigidbody2D>();
+        falltime = 0f;
         flagrb.bodyType = RigidbodyType2D.Static;
         flagrb.gravityScale = 0;
         flagrb.constraints = RigidbodyConstraints2D.FreezeAll;
+        Debug.Log("Flag reset");
     }
-    void OnTriggerEnter2D(Collider2D collision)
+
+    void OnTriggerEnter2D(Collider2D collider)
+    {
+        if (collider.gameObject.CompareTag("ground"))
+        {
+            Debug.Log("Flag hit the ground");
+            if (falltime > 0.5f)
+            {
+                Reset();
+            }
+        }
+    }
+    void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("ground"))
         {
-            Reset();
+            Debug.Log("Flag hit the ground");
+           if(falltime > 0.5f)
+           {
+               Reset();
+           }
         }
     }
 }
