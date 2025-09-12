@@ -476,6 +476,7 @@ GameObject:
   - component: {fileID: 907745664}
   - component: {fileID: 907745666}
   - component: {fileID: 907745667}
+  - component: {fileID: 907745668}
   m_Layer: 6
   m_Name: Square (1)
   m_TagString: Untagged
@@ -526,7 +527,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -626,6 +627,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &907745668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 907745663}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b3b8048365d52149b8af7c5517a0335, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  glitchChance: 0.05
+  glitchOffset: 0.1
+  glitchTime: 0.05
+  startGlitch: 0
 --- !u!1 &998613696
 GameObject:
   m_ObjectHideFlags: 0
