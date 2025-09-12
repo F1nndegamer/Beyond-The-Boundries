@@ -217,7 +217,7 @@ TilemapCollider2D:
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 8fdd822335376de4f88546396621a0ba, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -3772,11 +3772,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 782750142491701378, guid: 3a8403f4d136ef94dad42469f3a951f9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.71
+      value: -6.54
       objectReference: {fileID: 0}
     - target: {fileID: 782750142491701378, guid: 3a8403f4d136ef94dad42469f3a951f9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.47
+      value: -3.11
       objectReference: {fileID: 0}
     - target: {fileID: 782750142491701378, guid: 3a8403f4d136ef94dad42469f3a951f9, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3814,6 +3814,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 8231483236976012896, guid: 3a8403f4d136ef94dad42469f3a951f9, type: 3}
+      propertyPath: jumpForce
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3828,6 +3832,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1464926663445837613, guid: a0f3424a5258e5546b807c3fb613c60e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5046748267211322068, guid: a0f3424a5258e5546b807c3fb613c60e, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
