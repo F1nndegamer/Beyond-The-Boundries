@@ -38,4 +38,12 @@ public class PlayerMovement : MonoBehaviour
         }
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
     }
+public void TakeDamage(Vector2 knockback)
+{
+    Rigidbody2D rb = GetComponent<Rigidbody2D>();
+    rb.linearVelocity = Vector2.zero; // reset current movement
+    rb.AddForce(knockback, ForceMode2D.Impulse);
+}
+
+    
 }
