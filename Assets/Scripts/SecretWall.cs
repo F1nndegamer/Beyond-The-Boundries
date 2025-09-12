@@ -6,7 +6,7 @@ public class SecretWall : MonoBehaviour
     public enum RevealMode { OnJumpThrough, OnInteract, OnHit }
     public RevealMode revealMode = RevealMode.OnJumpThrough;
 
-    /*[Tooltip("Hangi yönden geçiþe izin verilecek? (ör: Vector2.left = saðdan gelince)")]
+    /*[Tooltip("Which direction will be allowed to pass? (e.g., Vector2.left = when coming from the right)")]
     public Vector2 allowedDirection = Vector2.left;*/
     [Tooltip("Will the collider remain closed (permanently) or will it be reopened later?")]
     public bool permanent = true;
