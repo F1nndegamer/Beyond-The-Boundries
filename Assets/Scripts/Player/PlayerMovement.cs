@@ -75,7 +75,9 @@ public class PlayerMovement : MonoBehaviour
             KeyPressed = true;
             InteractionText.gameObject.SetActive(false);
             Flag flag = Flag.GetComponent<Flag>();
-            flag.Fall();
+            if (flag != null) flag.Win();
+            FlagWin flagWin = Flag.GetComponent<FlagWin>();
+            flagWin.Win();
         }
     }
     public void TakeDamage(Vector2 knockback)
@@ -88,7 +90,7 @@ private IEnumerator ShootUpThroughColliders()
 {
     Physics2D.IgnoreLayerCollision(gameObject.layer, LayerMask.NameToLayer("Ground"), true);
 
-    rb.linearVelocity = new Vector2(rb.linearVelocity.x, 40f);
+    rb.linearVelocity = new Vector2(rb.linearVelocity.x, 20f);
 
     yield return new WaitForSeconds(0.5f);
 

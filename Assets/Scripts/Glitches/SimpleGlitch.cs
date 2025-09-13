@@ -21,6 +21,7 @@ public class SimpleGlitch : MonoBehaviour
 
     void Start()
     {
+        if (tilemap == null) tilemap = GetComponent<Tilemap>();
         tilemapCollider = tilemap.GetComponent<TilemapCollider2D>();
     }
 
