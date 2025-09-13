@@ -136,6 +136,7 @@ GameObject:
   - component: {fileID: 219163801}
   - component: {fileID: 219163803}
   - component: {fileID: 219163804}
+  - component: {fileID: 219163805}
   m_Layer: 0
   m_Name: flag
   m_TagString: Goal
@@ -286,6 +287,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
+--- !u!114 &219163805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 219163800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca1f49c74c7c4bb4b8f5af691521f90f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canwin: 1
 --- !u!1 &277844749
 GameObject:
   m_ObjectHideFlags: 0
@@ -2597,7 +2611,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Essentials
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3633458809596393990, guid: ed2e0b64c84f5ac40bf1849c9eb8bb86, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:

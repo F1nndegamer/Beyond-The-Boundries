@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using UnityEngine.Tilemaps;
+using Unity.VisualScripting;
 
 public class Flag : MonoBehaviour
 {
@@ -15,7 +16,7 @@ public class Flag : MonoBehaviour
         Reset(); // Start frozen
     }
 
-    public void Fall()
+    public void Win()
     {
         isfalling = true;
         Debug.Log("Flag falling");
@@ -50,7 +51,9 @@ public class Flag : MonoBehaviour
             if (falltime > 0.5f)
             {
                 Reset();
-            }
+                gameObject.GetComponent<FlagWin>().canwin = true;
+               this.enabled = false; 
+           }
         }
     }
     void OnCollisionEnter2D(Collision2D collision)
@@ -58,9 +61,11 @@ public class Flag : MonoBehaviour
         if (collision.gameObject.CompareTag("ground"))
         {
             Debug.Log("Flag hit the ground");
-           if(falltime > 0.5f)
-           {
-               Reset();
+            if (falltime > 0.5f)
+            {
+                Reset();
+                gameObject.GetComponent<FlagWin>().canwin = true;
+               this.enabled = false; 
            }
         }
     }
