@@ -4,6 +4,8 @@ using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEditor.SearchService;
+using UnityEngine.SceneManagement;
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerMovement : MonoBehaviour
 {
@@ -28,8 +30,9 @@ public class PlayerMovement : MonoBehaviour
     public GameObject Flag;
     [Header("Jump Bug")]
     private Queue<float> jumpTimes = new Queue<float>();
-    public float spamWindow = 2f; 
-    public int spamThreshold = 5; 
+    public float spamWindow = 2f;
+    public int spamThreshold = 5;
+    public bool touchingWall = false;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -46,8 +49,19 @@ public class PlayerMovement : MonoBehaviour
         }
 
         // Jump
-        if (isGrounded && Input.GetKeyDown(KeyCode.Space))
+        if ((isGrounded || (SceneManager.GetActiveScene().name == "Level6" && Time.timeScale == 0f)) && Input.GetKeyDown(KeyCode.Space))
         {
+            if (SceneManager.GetActiveScene().name == "Level6" && Time.timeScale == 0f)
+            {
+                rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
+                isJumping = true;
+                return;
+            }
+            else
+            {
+                Debug.Log(Time.timeScale);
+            }
+
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
             isJumping = true;
 
@@ -65,11 +79,19 @@ public class PlayerMovement : MonoBehaviour
                 jumpTimes.Clear();
             }
         }
+
         else if (isGrounded)
         {
             isJumping = false;
         }
-        isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
+        if (SceneManager.GetActiveScene().name == "Level5")
+        {
+            isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer) || touchingWall;
+        }
+        else
+        {
+            isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
+        }
         if (isInRange && Input.GetKeyDown(KeyCode.E))
         {
             KeyPressed = true;
@@ -86,16 +108,16 @@ public class PlayerMovement : MonoBehaviour
         rb.linearVelocity = Vector2.zero; // reset current movement
         rb.AddForce(knockback, ForceMode2D.Impulse);
     }
-private IEnumerator ShootColliders(float duration = 0.5f)
-{
-    Physics2D.IgnoreLayerCollision(gameObject.layer, LayerMask.NameToLayer("Ground"), true);
+    private IEnumerator ShootColliders(float duration = 0.5f)
+    {
+        Physics2D.IgnoreLayerCollision(gameObject.layer, LayerMask.NameToLayer("Ground"), true);
 
-    rb.linearVelocity = new Vector2(rb.linearVelocity.x, 20f);
+        rb.linearVelocity = new Vector2(rb.linearVelocity.x, 20f);
 
-    yield return new WaitForSeconds(duration);
+        yield return new WaitForSeconds(duration);
 
-    Physics2D.IgnoreLayerCollision(gameObject.layer, LayerMask.NameToLayer("Ground"), false);
-}
+        Physics2D.IgnoreLayerCollision(gameObject.layer, LayerMask.NameToLayer("Ground"), false);
+    }
 
     public void OnTriggerEnter2D(Collider2D Trigger)
     {
@@ -112,6 +134,30 @@ private IEnumerator ShootColliders(float duration = 0.5f)
         {
             InteractionText.gameObject.SetActive(false);
             isInRange = false;
+        }
+    }
+    void OnCollisionStay2D(Collision2D collision)
+    {
+        if (((1 << collision.gameObject.layer) & groundLayer) != 0)
+        {
+            foreach (ContactPoint2D contact in collision.contacts)
+            {
+                Vector2 normal = contact.normal;
+
+                if (Mathf.Abs(normal.x) > 0.5f)
+                {
+                    touchingWall = true;
+                    return;
+                }
+            }
+        }
+    }
+
+    void OnCollisionExit2D(Collision2D collision)
+    {
+        if (((1 << collision.gameObject.layer) & groundLayer) != 0)
+        {
+            touchingWall = false;
         }
     }
 }
