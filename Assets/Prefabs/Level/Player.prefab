@@ -131,12 +131,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
-  jumpForce: 12
+  jumpForce: 6
   groundCheck: {fileID: 1548534139319669810}
   groundCheckRadius: 0.2
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
+  InteractionText: {fileID: 0}
+  isInRange: 0
+  KeyPressed: 1
+  Flag: {fileID: 0}
+  spamWindow: 2
+  spamThreshold: 5
 --- !u!61 &5792257071886272274
 BoxCollider2D:
   m_ObjectHideFlags: 0
