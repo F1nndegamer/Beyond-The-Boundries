@@ -61,7 +61,7 @@ public class PlayerMovement : MonoBehaviour
             if (jumpTimes.Count >= spamThreshold)
             {
                 Debug.Log("Player is spamming jumps!");
-                StartCoroutine(ShootUpThroughColliders());
+                StartCoroutine(ShootColliders());
                 jumpTimes.Clear();
             }
         }
@@ -86,13 +86,13 @@ public class PlayerMovement : MonoBehaviour
         rb.linearVelocity = Vector2.zero; // reset current movement
         rb.AddForce(knockback, ForceMode2D.Impulse);
     }
-private IEnumerator ShootUpThroughColliders()
+private IEnumerator ShootColliders(float duration = 0.5f)
 {
     Physics2D.IgnoreLayerCollision(gameObject.layer, LayerMask.NameToLayer("Ground"), true);
 
     rb.linearVelocity = new Vector2(rb.linearVelocity.x, 20f);
 
-    yield return new WaitForSeconds(0.5f);
+    yield return new WaitForSeconds(duration);
 
     Physics2D.IgnoreLayerCollision(gameObject.layer, LayerMask.NameToLayer("Ground"), false);
 }

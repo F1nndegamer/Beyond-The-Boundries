@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 [RequireComponent(typeof(BoxCollider2D))]
 public class CrusherBlock2D : MonoBehaviour
@@ -9,7 +10,6 @@ public class CrusherBlock2D : MonoBehaviour
 
     [Header("Movement Settings")]
     public float moveSpeed = 2f;
-    public float pushForce = 5000f;
 
     private Vector2 targetPos;
     private bool movingToB = true;
@@ -24,6 +24,7 @@ public class CrusherBlock2D : MonoBehaviour
     {
         moveDir = ((Vector2)targetPos - (Vector2)transform.position).normalized;
         transform.position = Vector2.MoveTowards(transform.position, targetPos, moveSpeed * Time.fixedDeltaTime);
+
         if (Vector2.Distance(transform.position, targetPos) < 0.05f)
         {
             movingToB = !movingToB;
@@ -35,12 +36,30 @@ public class CrusherBlock2D : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            Rigidbody2D playerRb = collision.rigidbody;
-            if (playerRb != null)
+            // Start coroutine once when player overlaps too deeply
+            foreach (var contact in collision.contacts)
             {
-                playerRb.linearVelocity = moveDir * moveSpeed;
-                playerRb.AddForce(moveDir * pushForce * Time.fixedDeltaTime, ForceMode2D.Force);
+                if (contact.separation < -0.1f) 
+                {
+                    Collider2D crusherCol = GetComponent<Collider2D>();
+                    Collider2D playerCol = collision.collider;
+                    Rigidbody2D playerRb = collision.rigidbody;
+
+                    StartCoroutine(TemporarilyIgnoreCollision(playerCol, crusherCol, playerRb));
+                    break;
+                }
             }
         }
+    }
+
+    private IEnumerator TemporarilyIgnoreCollision(Collider2D playerCol, Collider2D crusherCol, Rigidbody2D playerRb)
+    {
+        Physics2D.IgnoreCollision(playerCol, crusherCol, true);
+
+        playerRb.linearVelocity = new Vector2(playerRb.linearVelocity.x, -15f);
+
+        yield return new WaitForSeconds(0.2f);
+
+        Physics2D.IgnoreCollision(playerCol, crusherCol, false);
     }
 }
