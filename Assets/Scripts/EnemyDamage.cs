@@ -3,6 +3,7 @@ using UnityEngine;
 public class EnemyDamage : MonoBehaviour
 {
     public float knockbackForce = 10f;  // Push
+    public float knockbackForceMulti = 1.1f;  // Push
     public float knockbackDuration = 0.2f; // The player loses control during this period.
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -17,6 +18,7 @@ public class EnemyDamage : MonoBehaviour
                 Vector2 knockbackDir = (collision.transform.position - transform.position).normalized;
 
                 playerRb.AddForce(knockbackDir * knockbackForce, ForceMode2D.Impulse);
+                knockbackForce *= knockbackForceMulti;
 
                 PlayerMovement movement = collision.gameObject.GetComponent<PlayerMovement>();
                 if (movement != null)
