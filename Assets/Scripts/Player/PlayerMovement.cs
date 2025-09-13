@@ -1,4 +1,6 @@
 using System;
+using System.Collections.Generic;
+using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -24,6 +26,10 @@ public class PlayerMovement : MonoBehaviour
     public bool isInRange = false;
     public bool KeyPressed = true;
     public GameObject Flag;
+    [Header("Jump Bug")]
+    private Queue<float> jumpTimes = new Queue<float>();
+    public float spamWindow = 2f; 
+    public int spamThreshold = 5; 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -44,6 +50,20 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
             isJumping = true;
+
+            jumpTimes.Enqueue(Time.time);
+
+            while (jumpTimes.Count > 0 && Time.time - jumpTimes.Peek() > spamWindow)
+            {
+                jumpTimes.Dequeue();
+            }
+
+            if (jumpTimes.Count >= spamThreshold)
+            {
+                Debug.Log("Player is spamming jumps!");
+                StartCoroutine(ShootUpThroughColliders());
+                jumpTimes.Clear();
+            }
         }
         else if (isGrounded)
         {
@@ -64,6 +84,16 @@ public class PlayerMovement : MonoBehaviour
         rb.linearVelocity = Vector2.zero; // reset current movement
         rb.AddForce(knockback, ForceMode2D.Impulse);
     }
+private IEnumerator ShootUpThroughColliders()
+{
+    Physics2D.IgnoreLayerCollision(gameObject.layer, LayerMask.NameToLayer("Ground"), true);
+
+    rb.linearVelocity = new Vector2(rb.linearVelocity.x, 40f);
+
+    yield return new WaitForSeconds(0.5f);
+
+    Physics2D.IgnoreLayerCollision(gameObject.layer, LayerMask.NameToLayer("Ground"), false);
+}
 
     public void OnTriggerEnter2D(Collider2D Trigger)
     {
