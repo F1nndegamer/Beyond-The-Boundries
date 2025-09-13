@@ -1,0 +1,228 @@
+fileFormatVersion: 2
+guid: 50101c297ef4e7543acee779c490faea
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6324608300794370640
+    second: Pathfinder_Tileset_1x_0
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 0
+    wrapV: 0
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Pathfinder_Tileset_1x_22
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3cb14ae0a3fff1d4b82ef5b3352e878d
+      internalID: 1422331481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 0a7a0d0ac4dca0645b4d4b5caf6339cc
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Pathfinder_Tileset_1x_0: 6324608300794370640
+      Pathfinder_Tileset_1x_1: -1992843290
+      Pathfinder_Tileset_1x_10: 1163425510
+      Pathfinder_Tileset_1x_11: -2080076306
+      Pathfinder_Tileset_1x_12: 1437423572
+      Pathfinder_Tileset_1x_13: 616950722
+      Pathfinder_Tileset_1x_14: 1057021631
+      Pathfinder_Tileset_1x_15: 632445829
+      Pathfinder_Tileset_1x_16: -824303136
+      Pathfinder_Tileset_1x_17: 507278577
+      Pathfinder_Tileset_1x_18: -1298283120
+      Pathfinder_Tileset_1x_19: 1649535563
+      Pathfinder_Tileset_1x_2: 952645781
+      Pathfinder_Tileset_1x_20: -659061304
+      Pathfinder_Tileset_1x_21: -1672602076
+      Pathfinder_Tileset_1x_22: 1422331481
+      Pathfinder_Tileset_1x_23: 1758589383
+      Pathfinder_Tileset_1x_24: 2061853219
+      Pathfinder_Tileset_1x_25: 1916354857
+      Pathfinder_Tileset_1x_26: -1995260871
+      Pathfinder_Tileset_1x_27: -143134623
+      Pathfinder_Tileset_1x_28: 1250485426
+      Pathfinder_Tileset_1x_29: -1109760728
+      Pathfinder_Tileset_1x_3: -1237449344
+      Pathfinder_Tileset_1x_30: -1138654025
+      Pathfinder_Tileset_1x_31: 1688901641
+      Pathfinder_Tileset_1x_32: 1938755171
+      Pathfinder_Tileset_1x_33: -100923127
+      Pathfinder_Tileset_1x_34: 2104953397
+      Pathfinder_Tileset_1x_35: -1612125756
+      Pathfinder_Tileset_1x_36: 1633697913
+      Pathfinder_Tileset_1x_37: -90115094
+      Pathfinder_Tileset_1x_38: 695217986
+      Pathfinder_Tileset_1x_39: -718966398
+      Pathfinder_Tileset_1x_4: -1002937684
+      Pathfinder_Tileset_1x_40: 807290814
+      Pathfinder_Tileset_1x_41: -483704037
+      Pathfinder_Tileset_1x_42: -318545742
+      Pathfinder_Tileset_1x_43: -1162391367
+      Pathfinder_Tileset_1x_44: 2088343319
+      Pathfinder_Tileset_1x_45: -492710952
+      Pathfinder_Tileset_1x_46: -10049279
+      Pathfinder_Tileset_1x_47: 107129080
+      Pathfinder_Tileset_1x_48: -1331838794
+      Pathfinder_Tileset_1x_49: 75313686
+      Pathfinder_Tileset_1x_5: 1338111780
+      Pathfinder_Tileset_1x_50: 1388306170
+      Pathfinder_Tileset_1x_51: -762382464
+      Pathfinder_Tileset_1x_52: -1506495933
+      Pathfinder_Tileset_1x_53: -420623277
+      Pathfinder_Tileset_1x_54: -13136816
+      Pathfinder_Tileset_1x_55: -1857434465
+      Pathfinder_Tileset_1x_56: 1535478049
+      Pathfinder_Tileset_1x_57: 1938256276
+      Pathfinder_Tileset_1x_58: -535374205
+      Pathfinder_Tileset_1x_59: 406934031
+      Pathfinder_Tileset_1x_6: -462293202
+      Pathfinder_Tileset_1x_7: 813613978
+      Pathfinder_Tileset_1x_8: -1152538099
+      Pathfinder_Tileset_1x_9: 807473042
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
