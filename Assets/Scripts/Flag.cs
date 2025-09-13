@@ -1,11 +1,13 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.Tilemaps;
 
 public class Flag : MonoBehaviour
 {
     private Rigidbody2D flagrb;
     bool isfalling;
     public float falltime;
+    public GameObject GlitchFor;
 
     void Awake()
     {
@@ -17,6 +19,9 @@ public class Flag : MonoBehaviour
     {
         isfalling = true;
         Debug.Log("Flag falling");
+        GlitchFor.GetComponent<CompositeCollider2D>().isTrigger = true;
+        GlitchFor.GetComponent<TilemapCollider2D>().isTrigger = true;
+        GlitchFor.GetComponent<SimpleGlitch>().startGlitch = true;
         flagrb.bodyType = RigidbodyType2D.Dynamic;
         flagrb.gravityScale = 1;
         flagrb.constraints = RigidbodyConstraints2D.None;
