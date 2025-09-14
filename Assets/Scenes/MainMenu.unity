@@ -387,8 +387,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Sound
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: cd2690a0cda773e479d56e1838c78c11, type: 2}
-  m_sharedMaterial: {fileID: 6773025629541830838, guid: cd2690a0cda773e479d56e1838c78c11, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -524,8 +524,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Effect
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: cd2690a0cda773e479d56e1838c78c11, type: 2}
-  m_sharedMaterial: {fileID: 6773025629541830838, guid: cd2690a0cda773e479d56e1838c78c11, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1128,6 +1128,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   musicClip: {fileID: 8300000, guid: a6b782b9b48dbfa48a429dae19d9b8f5, type: 3}
+  glitchedMusicClip: {fileID: 8300000, guid: 8d0b4d3d162f37043940e87bb44b3afc, type: 3}
   volumePrefKey: sound
   defaultVolume: 0.7
 --- !u!82 &392277766
