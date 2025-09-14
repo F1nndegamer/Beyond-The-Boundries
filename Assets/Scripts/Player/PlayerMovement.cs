@@ -61,9 +61,17 @@ public class PlayerMovement : MonoBehaviour
         {
             accumulateGravityWhilePaused = true;
             accumulatedVelocity += Physics2D.gravity * Time.unscaledDeltaTime;
+            if(accumulatedVelocity.y < -10f)
+            {
+                accumulatedVelocity.y = -10f;
+            }
         }
         else if (accumulateGravityWhilePaused)
         {
+            if (accumulatedVelocity.y == -10f)
+            {
+                StartCoroutine(TemporarilyIgnoreFallCollisions(0.5f));
+            }
             rb.linearVelocity += accumulatedVelocity;
             accumulatedVelocity = Vector2.zero;
             accumulateGravityWhilePaused = false;
@@ -78,7 +86,6 @@ public class PlayerMovement : MonoBehaviour
             }
 
             fallTimer += Time.deltaTime;
-            Debug.Log(fallTimer);
             if (fallTimer >= fallTimeThreshold && canTriggerFallIgnore && !collisionsIgnored && SceneManager.GetActiveScene().name == "Level8")
             {
                 StartCoroutine(TemporarilyIgnoreFallCollisions());
@@ -213,7 +220,7 @@ public class PlayerMovement : MonoBehaviour
             touchingWall = false;
         }
     }
-    private IEnumerator TemporarilyIgnoreFallCollisions()
+    private IEnumerator TemporarilyIgnoreFallCollisions(float duration = 0.5f)
     {
         Debug.Log("Temporarily ignoring fall collisions");
         collisionsIgnored = true;
@@ -221,7 +228,7 @@ public class PlayerMovement : MonoBehaviour
 
         Physics2D.IgnoreLayerCollision(gameObject.layer, LayerMask.NameToLayer("Ground"), true);
 
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(duration);
 
         Physics2D.IgnoreLayerCollision(gameObject.layer, LayerMask.NameToLayer("Ground"), false);
 
