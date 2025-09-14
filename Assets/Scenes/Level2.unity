@@ -399,6 +399,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 4172858050902838450, guid: 7d82ef833a4392440ba69f7034181e96, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 233272571126520074}
     - target: {fileID: 8698634437885267444, guid: 7d82ef833a4392440ba69f7034181e96, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -2626,6 +2630,11 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1524546022}
   m_SourcePrefab: {fileID: 100100000, guid: ed2e0b64c84f5ac40bf1849c9eb8bb86, type: 3}
+--- !u!20 &233272571126520074 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 1810497618990259784, guid: ed2e0b64c84f5ac40bf1849c9eb8bb86, type: 3}
+  m_PrefabInstance: {fileID: 233272571126520073}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4526334609981110563
 PrefabInstance:
   m_ObjectHideFlags: 0
