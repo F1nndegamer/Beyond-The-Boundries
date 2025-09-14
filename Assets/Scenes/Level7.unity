@@ -340,7 +340,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2097991134
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -378,8 +378,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Press R restart level
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: cd2690a0cda773e479d56e1838c78c11, type: 2}
-  m_sharedMaterial: {fileID: 6773025629541830838, guid: cd2690a0cda773e479d56e1838c78c11, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -473,7 +473,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 6773025629541830838, guid: cd2690a0cda773e479d56e1838c78c11, type: 2}
+  - {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
