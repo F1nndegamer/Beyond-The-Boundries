@@ -2526,8 +2526,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tmp: {fileID: 53956408}
-  finalText: "Leader: Finn\nProgramer: Finn, Muzant\nMusic: Takoyaki\nArt: Anime
-    \nThank you for play"
+  finalText: "Leader: F1nn\nProgramer: F1nn, Muzant\nMusic: Takoyaki\nArt: Anime
+    \nThanks for playing"
   glitchDuration: 2
   charGlitchInterval: 0.04
   revealSpeed: 0.02
@@ -2661,6 +2661,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   musicClip: {fileID: 8300000, guid: a6b782b9b48dbfa48a429dae19d9b8f5, type: 3}
+  glitchedMusicClip: {fileID: 0}
   volumePrefKey: sound
   defaultVolume: 0.7
 --- !u!82 &1545960543
