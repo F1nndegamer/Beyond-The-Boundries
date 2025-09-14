@@ -456,14 +456,6 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 42074998}
-    - target: {fileID: 4609003102841747688, guid: ed2e0b64c84f5ac40bf1849c9eb8bb86, type: 3}
-      propertyPath: Loop
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4609003102841747688, guid: ed2e0b64c84f5ac40bf1849c9eb8bb86, type: 3}
-      propertyPath: m_Volume
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7153733375202210876, guid: ed2e0b64c84f5ac40bf1849c9eb8bb86, type: 3}
       propertyPath: m_Name
       value: Essentials

@@ -5,6 +5,7 @@ public class OSTPlayer : MonoBehaviour
 {
     [Header("Audio Settings")]
     public AudioClip musicClip;
+    public AudioClip glitchedMusicClip;
     public string volumePrefKey = "sound";
     public float defaultVolume = 0.7f;
     private AudioSource audioSource;
@@ -38,4 +39,38 @@ public class OSTPlayer : MonoBehaviour
         PlayerPrefs.SetFloat(volumePrefKey, volume);
         PlayerPrefs.Save();
     }
+    public void SwitchTracks(bool seamless = true)
+    {
+        if (audioSource.clip == musicClip)
+        {
+            if (seamless)
+            {
+                float time = audioSource.time;
+                audioSource.clip = glitchedMusicClip;
+                audioSource.time = Mathf.Min(time, glitchedMusicClip.length); 
+            }
+            else
+            {
+                audioSource.clip = glitchedMusicClip;
+                audioSource.time = 0f;
+            }
+        }
+        else
+        {
+            if (seamless)
+            {
+                float time = audioSource.time;
+                audioSource.clip = musicClip;
+                audioSource.time = Mathf.Min(time, musicClip.length);
+            }
+            else
+            {
+                audioSource.clip = musicClip;
+                audioSource.time = 0f;
+            }
+        }
+
+        audioSource.Play();
+    }
+
 }

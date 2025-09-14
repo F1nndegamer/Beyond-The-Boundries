@@ -50,6 +50,7 @@ public class Flag : MonoBehaviour
             Debug.Log("Flag hit the ground");
             if (falltime > 0.5f)
             {
+                OSTPlayer.instance.SwitchTracks();
                 Reset();
                 gameObject.GetComponent<FlagWin>().canwin = true;
                this.enabled = false; 
