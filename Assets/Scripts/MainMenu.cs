@@ -27,11 +27,20 @@ public class MainMenu : MonoBehaviour
         toggle.onValueChanged.AddListener(Effect);
         slider.onValueChanged.AddListener(Sound);
         settingCanvas.SetActive(false);
-        mainmenuCanvas.SetActive(true); 
+        mainmenuCanvas.SetActive(true);
+        slider.value = PlayerPrefs.HasKey(prefSound) ? PlayerPrefs.GetFloat(prefSound) : 0.7f;
     }
     public void Play()
     {
         StartCoroutine(sceneGlitchTransition.GlitchTransition());
+    }
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            settingCanvas.SetActive(false);
+            mainmenuCanvas.SetActive(true);
+        }
     }
     public void Setting()
     {
@@ -58,6 +67,7 @@ public class MainMenu : MonoBehaviour
     {
         OSTPlayer.instance.SetVolume(v);
         PlayerPrefs.SetFloat(prefSound, v);
+        PlayerPrefs.Save();
     }
     public void SettingExit()
     {

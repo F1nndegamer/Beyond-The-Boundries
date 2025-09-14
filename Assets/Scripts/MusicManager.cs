@@ -5,8 +5,8 @@ public class OSTPlayer : MonoBehaviour
 {
     [Header("Audio Settings")]
     public AudioClip musicClip;
-    public string volumePrefKey = "MusicVolume";
-    public float defaultVolume = 0.7f; 
+    public string volumePrefKey = "sound";
+    public float defaultVolume = 0.7f;
     private AudioSource audioSource;
     public static OSTPlayer instance;
 

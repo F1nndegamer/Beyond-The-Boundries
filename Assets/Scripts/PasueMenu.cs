@@ -17,7 +17,7 @@ public class PasueMenu : MonoBehaviour
     {
         toggle.onValueChanged.AddListener(Effect);
         slider.onValueChanged.AddListener(Sound);
-        slider.value = PlayerPrefs.HasKey(prefSound) ? PlayerPrefs.GetFloat(prefSound) : 1f;
+        slider.value = PlayerPrefs.HasKey(prefSound) ? PlayerPrefs.GetFloat(prefSound) : 0.7f;
     }
     void Update()
     {
@@ -50,5 +50,6 @@ public class PasueMenu : MonoBehaviour
     {
         OSTPlayer.instance.SetVolume(v);
         PlayerPrefs.SetFloat(prefSound, v);
+        PlayerPrefs.Save();
     }
 }
