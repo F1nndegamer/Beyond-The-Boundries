@@ -220,7 +220,7 @@ public class PlayerMovement : MonoBehaviour
             touchingWall = false;
         }
     }
-    private IEnumerator TemporarilyIgnoreFallCollisions(float duration = 0.5f)
+    public IEnumerator TemporarilyIgnoreFallCollisions(float duration = 0.5f)
     {
         Debug.Log("Temporarily ignoring fall collisions");
         collisionsIgnored = true;

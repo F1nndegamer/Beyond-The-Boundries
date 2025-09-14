@@ -44,8 +44,8 @@ public class CrusherBlock2D : MonoBehaviour
                     Collider2D crusherCol = GetComponent<Collider2D>();
                     Collider2D playerCol = collision.collider;
                     Rigidbody2D playerRb = collision.rigidbody;
-
-                    StartCoroutine(TemporarilyIgnoreCollision(playerCol, crusherCol, playerRb));
+                    PlayerMovement playerMovement = collision.gameObject.GetComponent<PlayerMovement>();
+                    StartCoroutine(playerMovement.TemporarilyIgnoreFallCollisions(0.8f));
                     break;
                 }
             }

@@ -3313,6 +3313,10 @@ PrefabInstance:
       propertyPath: m_Tiles.Array.data[151].second.m_TileObjectToInstantiateIndex
       value: 65535
       objectReference: {fileID: 0}
+    - target: {fileID: 1098651896921671015, guid: a0f3424a5258e5546b807c3fb613c60e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 8.99
+      objectReference: {fileID: 0}
     - target: {fileID: 1464926663445837613, guid: a0f3424a5258e5546b807c3fb613c60e, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -3336,6 +3340,14 @@ PrefabInstance:
     - target: {fileID: 5984293191702378678, guid: a0f3424a5258e5546b807c3fb613c60e, type: 3}
       propertyPath: m_LocalPosition.y
       value: -9.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 6009410278339033822, guid: a0f3424a5258e5546b807c3fb613c60e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.92
+      objectReference: {fileID: 0}
+    - target: {fileID: 6009410278339033822, guid: a0f3424a5258e5546b807c3fb613c60e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.58
       objectReference: {fileID: 0}
     - target: {fileID: 8249160732233950919, guid: a0f3424a5258e5546b807c3fb613c60e, type: 3}
       propertyPath: m_LocalPosition.x
