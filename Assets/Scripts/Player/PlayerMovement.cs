@@ -42,26 +42,40 @@ public class PlayerMovement : MonoBehaviour
     public bool accumulateGravityWhilePaused = false;
     private Vector2 accumulatedVelocity = Vector2.zero;
 
+    Animator animator;
+
     void Start()
     {
         ActualStartPosition = transform.position;
         rb = GetComponent<Rigidbody2D>();
         isJumping = false;
+        animator = GetComponent<Animator>();
     }
 
     void Update()
     {
+        if (SceneManager.GetActiveScene().name == "Level5")
+        {
+            isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer) || touchingWall;
+        }
+        else
+        {
+            isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
+        }
+        Debug.Log(isGrounded);
+        animator.SetBool("isJumping", !isGrounded);
         float moveInput = Input.GetAxisRaw("Horizontal");
         rb.linearVelocity = new Vector2(moveInput * moveSpeed, rb.linearVelocity.y);
         if (moveInput != 0)
         {
             transform.localScale = new Vector3(Mathf.Sign(moveInput) * Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
         }
+
         if (SceneManager.GetActiveScene().name == "Level9" && Time.timeScale == 0f)
         {
             accumulateGravityWhilePaused = true;
             accumulatedVelocity += Physics2D.gravity * Time.unscaledDeltaTime;
-            if(accumulatedVelocity.y < -10f)
+            if (accumulatedVelocity.y < -10f)
             {
                 accumulatedVelocity.y = -10f;
             }
@@ -98,7 +112,9 @@ public class PlayerMovement : MonoBehaviour
         }
         // Jump
         if ((isGrounded || (SceneManager.GetActiveScene().name == "Level6" && Time.timeScale == 0f)) && Input.GetKeyDown(KeyCode.Space))
+
         {
+
             if (SceneManager.GetActiveScene().name == "Level6" && Time.timeScale == 0f)
             {
                 rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
@@ -132,14 +148,7 @@ public class PlayerMovement : MonoBehaviour
         {
             isJumping = false;
         }
-        if (SceneManager.GetActiveScene().name == "Level5")
-        {
-            isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer) || touchingWall;
-        }
-        else
-        {
-            isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
-        }
+
         if (isInRange && Input.GetKeyDown(KeyCode.E))
         {
             KeyPressed = true;
@@ -161,6 +170,11 @@ public class PlayerMovement : MonoBehaviour
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             }
         }
+    }
+    void FixedUpdate()
+    {
+        animator.SetFloat("xVelocity", Math.Abs(rb.linearVelocity.x));
+        animator.SetFloat("yVelocity", rb.linearVelocity.y);
     }
     public void TakeDamage(Vector2 knockback)
     {
