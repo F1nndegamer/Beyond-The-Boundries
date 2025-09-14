@@ -34,6 +34,14 @@ public class PlayerMovement : MonoBehaviour
     public bool touchingWall = false;
     [Header("Level Specific")]
     public Vector2 ActualStartPosition;
+    public float fallTimeThreshold = 3f;
+    private float fallTimer = 0f;
+    private bool isFalling = false;
+    private bool canTriggerFallIgnore = true;
+    private bool collisionsIgnored = false;
+    public bool accumulateGravityWhilePaused = false;
+    private Vector2 accumulatedVelocity = Vector2.zero;
+
     void Start()
     {
         ActualStartPosition = transform.position;
@@ -49,7 +57,38 @@ public class PlayerMovement : MonoBehaviour
         {
             transform.localScale = new Vector3(Mathf.Sign(moveInput) * Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
         }
+        if (SceneManager.GetActiveScene().name == "Level9" && Time.timeScale == 0f)
+        {
+            accumulateGravityWhilePaused = true;
+            accumulatedVelocity += Physics2D.gravity * Time.unscaledDeltaTime;
+        }
+        else if (accumulateGravityWhilePaused)
+        {
+            rb.linearVelocity += accumulatedVelocity;
+            accumulatedVelocity = Vector2.zero;
+            accumulateGravityWhilePaused = false;
+        }
+        if (rb.linearVelocity.y < -0.01f && !isGrounded)
+        {
+            if (!isFalling)
+            {
+                isFalling = true;
+                fallTimer = 0f;
+                canTriggerFallIgnore = true;
+            }
 
+            fallTimer += Time.deltaTime;
+            Debug.Log(fallTimer);
+            if (fallTimer >= fallTimeThreshold && canTriggerFallIgnore && !collisionsIgnored && SceneManager.GetActiveScene().name == "Level8")
+            {
+                StartCoroutine(TemporarilyIgnoreFallCollisions());
+            }
+        }
+        else
+        {
+            isFalling = false;
+            fallTimer = 0f;
+        }
         // Jump
         if ((isGrounded || (SceneManager.GetActiveScene().name == "Level6" && Time.timeScale == 0f)) && Input.GetKeyDown(KeyCode.Space))
         {
@@ -103,7 +142,7 @@ public class PlayerMovement : MonoBehaviour
             FlagWin flagWin = Flag.GetComponent<FlagWin>();
             flagWin.Win();
         }
-        if(Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.R))
         {
             if (SceneManager.GetActiveScene().name == "Level7")
             {
@@ -174,4 +213,19 @@ public class PlayerMovement : MonoBehaviour
             touchingWall = false;
         }
     }
+    private IEnumerator TemporarilyIgnoreFallCollisions()
+    {
+        Debug.Log("Temporarily ignoring fall collisions");
+        collisionsIgnored = true;
+        canTriggerFallIgnore = false;
+
+        Physics2D.IgnoreLayerCollision(gameObject.layer, LayerMask.NameToLayer("Ground"), true);
+
+        yield return new WaitForSeconds(0.5f);
+
+        Physics2D.IgnoreLayerCollision(gameObject.layer, LayerMask.NameToLayer("Ground"), false);
+
+        collisionsIgnored = false;
+    }
+
 }
