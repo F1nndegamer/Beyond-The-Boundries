@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class EnemyDamage : MonoBehaviour
@@ -5,7 +6,7 @@ public class EnemyDamage : MonoBehaviour
     public float knockbackForce = 10f;  // Push
     public float knockbackForceMulti = 1.1f;  // Push
     public float knockbackDuration = 0.2f; // The player loses control during this period.
-
+    public float maxknockbackForce = 0.003f;
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
@@ -14,13 +15,14 @@ public class EnemyDamage : MonoBehaviour
 
             if (playerRb != null)
             {
-                
+
                 Vector2 knockbackDir = (collision.transform.position - transform.position).normalized;
 
                 playerRb.AddForce(knockbackDir * knockbackForce, ForceMode2D.Impulse);
-                knockbackForce *= knockbackForceMulti;
-
+                knockbackForce *= knockbackForceMulti; ;
                 PlayerMovement movement = collision.gameObject.GetComponent<PlayerMovement>();
+                if (knockbackForce > maxknockbackForce) StartCoroutine(movement.TemporarilyIgnoreFallCollisions());
+                else Debug.Log(knockbackForce);
                 if (movement != null)
                 {
                     movement.enabled = false;
