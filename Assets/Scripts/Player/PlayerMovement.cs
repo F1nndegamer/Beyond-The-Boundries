@@ -75,16 +75,16 @@ public class PlayerMovement : MonoBehaviour
         {
             accumulateGravityWhilePaused = true;
             accumulatedVelocity += Physics2D.gravity * Time.unscaledDeltaTime;
-            if (accumulatedVelocity.y < -10f)
+            if (accumulatedVelocity.y < -90f)
             {
-                accumulatedVelocity.y = -10f;
+                accumulatedVelocity.y = -90f;
             }
         }
         else if (accumulateGravityWhilePaused)
         {
-            if (accumulatedVelocity.y == -10f)
+            if (accumulatedVelocity.y == -90f)
             {
-                StartCoroutine(TemporarilyIgnoreFallCollisions(0.5f));
+                StartCoroutine(TemporarilyIgnoreFallCollisions(0.1f));
             }
             rb.linearVelocity += accumulatedVelocity;
             accumulatedVelocity = Vector2.zero;
