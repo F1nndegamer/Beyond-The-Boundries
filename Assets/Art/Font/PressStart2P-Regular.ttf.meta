@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 755819ee2a9121c47a05fdb5ba9a11de
+guid: 367d1742265bc5e4796c7093cf24aa2a
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,7 +9,7 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - Orbitron
+  - Press Start 2P
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0
