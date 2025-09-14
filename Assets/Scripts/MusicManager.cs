@@ -6,7 +6,7 @@ public class OSTPlayer : MonoBehaviour
     [Header("Audio Settings")]
     public AudioClip musicClip;
     public string volumePrefKey = "MusicVolume";
-    public float defaultVolume = 1f; 
+    public float defaultVolume = 0.7f; 
     private AudioSource audioSource;
     public static OSTPlayer instance;
 
@@ -16,6 +16,8 @@ public class OSTPlayer : MonoBehaviour
         if (instance == null)
         {
             instance = this;
+            this.transform.parent = null;
+            DontDestroyOnLoad(gameObject);
         }
         else
         {
