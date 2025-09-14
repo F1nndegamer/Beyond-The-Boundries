@@ -124,17 +124,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 782750142491701378, guid: 3a8403f4d136ef94dad42469f3a951f9, type: 3}
   m_PrefabInstance: {fileID: 4526334609981110563}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &682900797 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2209561639702430473, guid: 7d82ef833a4392440ba69f7034181e96, type: 3}
-  m_PrefabInstance: {fileID: 6921793072203956261}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &711865265
 GameObject:
   m_ObjectHideFlags: 0
@@ -458,13 +447,13 @@ PrefabInstance:
     - target: {fileID: 8231483236976012896, guid: 3a8403f4d136ef94dad42469f3a951f9, type: 3}
       propertyPath: InteractionText
       value: 
-      objectReference: {fileID: 682900797}
+      objectReference: {fileID: 9126217793538163500}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3a8403f4d136ef94dad42469f3a951f9, type: 3}
---- !u!1001 &6921793072203956261
+--- !u!1001 &6242486640818855545
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -4963,6 +4952,17 @@ TilemapCollider2D:
   m_CorrespondingSourceObject: {fileID: 3669586866315303605, guid: a0f3424a5258e5546b807c3fb613c60e, type: 3}
   m_PrefabInstance: {fileID: 7608773169848228833}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &9126217793538163500 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2209561639702430473, guid: 7d82ef833a4392440ba69f7034181e96, type: 3}
+  m_PrefabInstance: {fileID: 6242486640818855545}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -4971,5 +4971,5 @@ SceneRoots:
   - {fileID: 4526334609981110563}
   - {fileID: 7608773169848228833}
   - {fileID: 711865267}
-  - {fileID: 6921793072203956261}
+  - {fileID: 6242486640818855545}
   - {fileID: 1559152466}
