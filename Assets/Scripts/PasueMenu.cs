@@ -21,13 +21,13 @@ public class PasueMenu : MonoBehaviour
     }
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && !isOpen)
+        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.P) && !isOpen)
         {
             Time.timeScale = 0;
             isOpen = true;
             pause.SetActive(true);
         }
-        else if(Input.GetKeyDown(KeyCode.Escape) && isOpen)
+        else if(Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.P) && isOpen)
         {
             Time.timeScale = 1;
             isOpen = false;
