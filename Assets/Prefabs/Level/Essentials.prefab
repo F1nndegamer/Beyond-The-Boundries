@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 076116c15d0f8a0459628694d77a17bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  musicClip: {fileID: 8300000, guid: c3ed6914d0fc08840a366a018bf931cc, type: 3}
+  musicClip: {fileID: 8300000, guid: a6b782b9b48dbfa48a429dae19d9b8f5, type: 3}
   volumePrefKey: sound
   defaultVolume: 1
 --- !u!82 &4609003102841747688
