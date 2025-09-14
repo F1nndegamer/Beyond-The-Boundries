@@ -4,7 +4,6 @@ using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEditor.SearchService;
 using UnityEngine.SceneManagement;
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerMovement : MonoBehaviour
