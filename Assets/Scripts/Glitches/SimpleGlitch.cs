@@ -16,6 +16,7 @@ public class SimpleGlitch : MonoBehaviour
     public float glitchOffset = 0.1f;   
     public float glitchTime = 0.05f;
     public bool startGlitch = false;
+    public bool isCloseCollider = true;
 
     TilemapCollider2D tilemapCollider;
 
@@ -48,7 +49,7 @@ public class SimpleGlitch : MonoBehaviour
         Color originalColor = tilemap.GetColor(cell);
 
        
-        if (tilemapCollider != null)
+        if (tilemapCollider != null && isCloseCollider)
             tilemapCollider.enabled = false;
 
 

@@ -2448,17 +2448,50 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 822399268}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5b3b8048365d52149b8af7c5517a0335, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   tilemap: {fileID: 0}
-  targetCells: []
+  targetCells:
+  - {x: 7, y: 0, z: 0}
   glitchChance: 0.05
   glitchOffset: 0.1
   glitchTime: 0.05
-  startGlitch: 0
+  startGlitch: 1
+  isCloseCollider: 0
+--- !u!1 &972972649
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 972972650}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &972972650
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 972972649}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 7.35, y: 0.15, z: 2.691943}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1225191595
 GameObject:
   m_ObjectHideFlags: 0
@@ -3095,3 +3128,4 @@ SceneRoots:
   - {fileID: 711865267}
   - {fileID: 714888776}
   - {fileID: 1225191597}
+  - {fileID: 972972650}

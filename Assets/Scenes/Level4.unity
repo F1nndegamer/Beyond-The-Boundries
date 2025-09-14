@@ -3908,13 +3908,38 @@ PrefabInstance:
     - {fileID: 5857043227295474160, guid: a0f3424a5258e5546b807c3fb613c60e, type: 3}
     - {fileID: 139447086250270590, guid: a0f3424a5258e5546b807c3fb613c60e, type: 3}
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5046748267211322068, guid: a0f3424a5258e5546b807c3fb613c60e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7608773169848228841}
   m_SourcePrefab: {fileID: 100100000, guid: a0f3424a5258e5546b807c3fb613c60e, type: 3}
 --- !u!19719996 &7608773169848228834 stripped
 TilemapCollider2D:
   m_CorrespondingSourceObject: {fileID: 3669586866315303605, guid: a0f3424a5258e5546b807c3fb613c60e, type: 3}
   m_PrefabInstance: {fileID: 7608773169848228833}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &7608773169848228835 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5046748267211322068, guid: a0f3424a5258e5546b807c3fb613c60e, type: 3}
+  m_PrefabInstance: {fileID: 7608773169848228833}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7608773169848228841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7608773169848228835}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 228e0106cc125094981fd8402c603b15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isOffsetActive: 0
+  glitchChance: 0.05
+  glitchOffset: 0.1
+  glitchTime: 0.05
+  startGlitch: 1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
