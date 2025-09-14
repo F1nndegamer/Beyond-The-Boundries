@@ -23,7 +23,7 @@ public class SceneGlitchTransition : MonoBehaviour
         }
     }
 
-    public IEnumerator GlitchTransition(int sceneName)
+    public IEnumerator GlitchTransition()
     {
         float t = 0f;
         while (t < transitionTime)
@@ -36,7 +36,7 @@ public class SceneGlitchTransition : MonoBehaviour
             digital.intensity.value = t / transitionTime;
             yield return null;
         }
-        SceneManager.LoadScene(sceneName);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         t = transitionTime;
         while (t > 0f)
         {

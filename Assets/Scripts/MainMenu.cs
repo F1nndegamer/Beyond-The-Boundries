@@ -31,7 +31,7 @@ public class MainMenu : MonoBehaviour
     }
     public void Play()
     {
-        StartCoroutine(sceneGlitchTransition.GlitchTransition(1));
+        StartCoroutine(sceneGlitchTransition.GlitchTransition());
     }
     public void Setting()
     {
