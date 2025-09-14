@@ -32,8 +32,11 @@ public class PlayerMovement : MonoBehaviour
     public float spamWindow = 2f;
     public int spamThreshold = 5;
     public bool touchingWall = false;
+    [Header("Level Specific")]
+    public Vector2 ActualStartPosition;
     void Start()
     {
+        ActualStartPosition = transform.position;
         rb = GetComponent<Rigidbody2D>();
         isJumping = false;
     }
@@ -99,6 +102,18 @@ public class PlayerMovement : MonoBehaviour
             if (flag != null) flag.Win();
             FlagWin flagWin = Flag.GetComponent<FlagWin>();
             flagWin.Win();
+        }
+        if(Input.GetKeyDown(KeyCode.R))
+        {
+            if (SceneManager.GetActiveScene().name == "Level7")
+            {
+                ActualStartPosition -= new Vector2(0, 0.1f);
+                transform.position = ActualStartPosition;
+            }
+            else
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            }
         }
     }
     public void TakeDamage(Vector2 knockback)
