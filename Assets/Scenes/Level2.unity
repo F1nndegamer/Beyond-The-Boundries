@@ -2677,18 +2677,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 782750142491701378, guid: 3a8403f4d136ef94dad42469f3a951f9, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.95
-      objectReference: {fileID: 0}
-    - target: {fileID: 782750142491701378, guid: 3a8403f4d136ef94dad42469f3a951f9, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.95
-      objectReference: {fileID: 0}
-    - target: {fileID: 782750142491701378, guid: 3a8403f4d136ef94dad42469f3a951f9, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.95
-      objectReference: {fileID: 0}
-    - target: {fileID: 782750142491701378, guid: 3a8403f4d136ef94dad42469f3a951f9, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6.54
       objectReference: {fileID: 0}
@@ -2728,10 +2716,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 782750142491701378, guid: 3a8403f4d136ef94dad42469f3a951f9, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4365575775363926549, guid: 3a8403f4d136ef94dad42469f3a951f9, type: 3}
       propertyPath: m_Name
       value: Player
@@ -2740,18 +2724,6 @@ PrefabInstance:
       propertyPath: Flag
       value: 
       objectReference: {fileID: 219163800}
-    - target: {fileID: 8231483236976012896, guid: 3a8403f4d136ef94dad42469f3a951f9, type: 3}
-      propertyPath: jumpForce
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 8231483236976012896, guid: 3a8403f4d136ef94dad42469f3a951f9, type: 3}
-      propertyPath: spamWindow
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 8231483236976012896, guid: 3a8403f4d136ef94dad42469f3a951f9, type: 3}
-      propertyPath: spamThreshold
-      value: 20
-      objectReference: {fileID: 0}
     - target: {fileID: 8231483236976012896, guid: 3a8403f4d136ef94dad42469f3a951f9, type: 3}
       propertyPath: InteractionText
       value: 
